@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SkyCast</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="weather-card">
+    <div class="weather-card">
 
-    <h1>☁️ SkyCast</h1>
+        <h1>☁️ SkyCast</h1>
 
-    <h2>Weather Dashboard</h2>
+        <h2 id="city">Loading...</h2>
 
-    <img src="https://openweathermap.org/img/wn/10d@2x.png" width="120">
+        <img id="weatherIcon" width="120" alt="Weather Icon">
 
-    <h1>--°C</h1>
+        <h1 id="temperature">--°C</h1>
 
-    <p>Loading Weather...</p>
+        <p id="condition">Loading Weather...</p>
 
-    <div class="details">
+        <div class="details">
 
-        <div class="detail-card">
-            <h3>💧 Humidity</h3>
-            <p>--</p>
-        </div>
+            <div class="detail-card">
+                <h3>💧 Humidity</h3>
+                <p>--</p>
+            </div>
 
-        <div class="detail-card">
-            <h3>🌬 Wind</h3>
-            <p>--</p>
-        </div>
+            <div class="detail-card">
+                <h3>🌬 Wind</h3>
+                <p>--</p>
+            </div>
 
-        <div class="detail-card">
-            <h3>📈 Pressure</h3>
-            <p>--</p>
-        </div>
+            <div class="detail-card">
+                <h3>📈 Pressure</h3>
+                <p>--</p>
+            </div>
 
-        <div class="detail-card">
-            <h3>👁 Visibility</h3>
-            <p>--</p>
+            <div class="detail-card">
+                <h3>👁 Visibility</h3>
+                <p>--</p>
+            </div>
+
         </div>
 
     </div>
 
-</div>
+    <script src="script.js"></script>
 
 </body>
 </html>
