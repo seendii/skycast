@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,58 +11,40 @@
 
 <div class="weather-card">
 
-    <h1>☁️ SkyCast</h1>
+```
+<h1>SkyCast</h1>
 
-    <h2 id="city">Loading...</h2>
+<div class="search-box">
+    <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter Your City">
 
-    <img id="weatherIcon" width="120" alt="Weather Icon">
-
-    <h1 id="temperature">--°C</h1>
-
-    <p id="condition">Loading Weather...</p>
-
-    <div class="details">
-
-        <div class="detail-card">
-            <h3>💧 Humidity</h3>
-            <p id="humidity">--</p>
-        </div>
-
-        <div class="detail-card">
-            <h3>🌬 Wind</h3>
-            <p id="wind">--</p>
-        </div>
-
-        <div class="detail-card">
-            <h3>📈 Pressure</h3>
-            <p id="pressure">--</p>
-        </div>
-
-        <div class="detail-card">
-            <h3>👁 Visibility</h3>
-            <p id="visibility">--</p>
-        </div>
-
-        <div class="detail-card">
-            <h3>☁ Clouds</h3>
-            <p id="clouds">--</p>
-        </div>
-
-        <div class="detail-card">
-            <h3>🌅 Sunrise</h3>
-            <p id="sunrise">--</p>
-        </div>
-
-        <div class="detail-card">
-            <h3>🌇 Sunset</h3>
-            <p id="sunset">--</p>
-        </div>
-
-    </div>
+    <button onclick="goToWeather()">
+        Search
+    </button>
+</div>
+```
 
 </div>
 
-<script src="script.js"></script>
+<script>
+
+function goToWeather() {
+
+    let city =
+        document.getElementById("cityInput").value;
+
+    if(city !== "") {
+
+        window.location.href =
+            "weather.html?city=" + city;
+
+    }
+
+}
+
+</script>
 
 </body>
 </html>
