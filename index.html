@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,24 +10,22 @@
 
 <div class="weather-card">
 
-<h1>SkyCast</h1>
+    <h1>SkyCast</h1>
 
-<div class="search-box">
-    <input
-        type="text"
-        id="cityInput"
-        placeholder="Enter Your City">
+    <div class="search-box">
+        <input
+            type="text"
+            id="cityInput"
+            placeholder="Enter Your City">
 
-    <button onclick="goToWeather()">
-        Search
-    </button>
-</div>
-
+        <button onclick="goToWeather()">
+            Search
+        </button>
+    </div>
 
 </div>
 
 <script>
-
 function goToWeather() {
 
     let city =
@@ -40,9 +37,7 @@ function goToWeather() {
             "weather.html?city=" + city;
 
     }
-
 }
-
 </script>
 
 </body>
