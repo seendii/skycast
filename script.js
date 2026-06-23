@@ -5,47 +5,55 @@ const city = params.get("city");
 
 async function getWeather(city) {
 
+    try {
 
-const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-);
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        );
 
-const data = await response.json();
+        const data = await response.json();
 
-document.getElementById("city").innerText = data.name;
-document.getElementById("temperature").innerText =
-    Math.round(data.main.temp) + "°C";
+        document.getElementById("city").innerText =
+            data.name;
 
-document.getElementById("condition").innerText =
-    data.weather[0].description;
+        document.getElementById("temperature").innerText =
+            Math.round(data.main.temp) + "°C";
 
-document.getElementById("weatherIcon").src =
-    `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        document.getElementById("condition").innerText =
+            data.weather[0].description;
 
-document.getElementById("humidity").innerText =
-    data.main.humidity + "%";
+        document.getElementById("weatherIcon").src =
+            `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
-document.getElementById("wind").innerText =
-    data.wind.speed + " m/s";
+        document.getElementById("humidity").innerText =
+            data.main.humidity + "%";
 
-document.getElementById("pressure").innerText =
-    data.main.pressure + " hPa";
+        document.getElementById("wind").innerText =
+            data.wind.speed + " m/s";
 
-document.getElementById("visibility").innerText =
-    (data.visibility / 1000) + " km";
+        document.getElementById("pressure").innerText =
+            data.main.pressure + " hPa";
 
-document.getElementById("clouds").innerText =
-    data.clouds.all + "%";
+        document.getElementById("visibility").innerText =
+            (data.visibility / 1000) + " km";
 
-document.getElementById("sunrise").innerText =
-    new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+        document.getElementById("clouds").innerText =
+            data.clouds.all + "%";
 
-document.getElementById("sunset").innerText =
-    new Date(data.sys.sunset * 1000).toLocaleTimeString();
+        document.getElementById("sunrise").innerText =
+            new Date(data.sys.sunrise * 1000).toLocaleTimeString();
 
+        document.getElementById("sunset").innerText =
+            new Date(data.sys.sunset * 1000).toLocaleTimeString();
 
+    } catch (error) {
+
+        document.getElementById("condition").innerText =
+            "City not found";
+
+    }
 }
 
-if (city) {
-getWeather(city);
+if(city) {
+    getWeather(city);
 }
