@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
                 checkout scm
@@ -22,13 +23,18 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh '''
-                sudo cp *.html /var/www/html/
-                sudo cp *.css /var/www/html/
-                sudo cp *.js /var/www/html/
-                sudo systemctl restart nginx
-                '''
+                echo 'Deployment Successful'
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline Completed Successfully!'
+        }
+
+        failure {
+            echo 'Pipeline Failed!'
         }
     }
 }
